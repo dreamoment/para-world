@@ -29,7 +29,7 @@ const createTarget = (target: THREE.Object3D, clone: THREE.Object3D, renderOrder
 
 class ParaWorld {
 
-    static renderOrder: number = 1
+    static renderOrder: number = 0
 
     static createTargetByMaterial(target: THREE.Object3D, material: THREE.Material) {
         const clone = target.clone()

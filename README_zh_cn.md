@@ -1,26 +1,28 @@
 <h1 align="center">para-world</h1>
 
-Language: English | [中文简体](README_zh_cn.md)
+![](/docs/preview.gif)
 
-## What is para-world ?
+语言: [English](README.md) | 中文简体
 
-Achieve the X-ray effect of objects as if there were parallel worlds.
+## para-world 是什么 ?
 
-## Features
+实现物体X光透视效果，就像存在平行世界一样。
 
-- Lightweight and easy to use
+## 特性
 
-- It relies on `three.js` and does not mandate the `three.js` version
+- 轻量易用
 
-- support`typescript`
+- 依赖于`three.js`，不强制要求`three.js`版本
 
-## Install
+- 支持`typescript`
+
+## 安装
 
 ```agsl
 npm i @dreamoment/para-world
 ```
 
-## Examples
+## 示例
 
 ```
 import * as THREE from 'three'
@@ -73,11 +75,11 @@ renderer.setAnimationLoop(animate)
 
 ### `static`renderOrder
 
-Render order, used as a base for calculation。
+渲染顺序，用作计算基准。
 
 ### `static`createTargetByMaterial
 
-Pass uniform materials to create transformable objects, such as players. (For simple models of a single material)
+传递统一材质，创建可变换物体，例如: 玩家。（适用于单一材质的简单模型）
 
 ```
 ParaWorld.createTargetByMaterial(target: THREE.Object3D, material: THREE.Material): THREE.Group
@@ -85,7 +87,8 @@ ParaWorld.createTargetByMaterial(target: THREE.Object3D, material: THREE.Materia
 
 ### `static`createTargetByObject3D
 
-Pass custom objects and create transformable objects, such as players. (For complex models with multiple materials) This custom object is a clone of a different new material based on the source object.
+传递自定义物体，创建可变换物体，例如: 玩家。（适用于多材质的复杂模型）
+该自定义物体，是基于源物体的、不同新材质的克隆体。
 
 ```
 ParaWorld.createTargetByMaterial(target: THREE.Object3D, clone: THREE.Object3D): THREE.Group
@@ -93,7 +96,7 @@ ParaWorld.createTargetByMaterial(target: THREE.Object3D, clone: THREE.Object3D):
 
 ### `static`createCover
 
-Create an occluding object, such as a wall.
+创建遮挡物体，例如: 墙。
 
 ```
 ParaWorld.createCover(target: THREE.Object3D): THREE.Group
