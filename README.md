@@ -1,5 +1,7 @@
 <h1 align="center">para-world</h1>
 
+![](/docs/preview.gif)
+
 Language: English | [中文简体](README_zh_cn.md)
 
 ## What is para-world ?
