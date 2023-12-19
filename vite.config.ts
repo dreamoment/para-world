@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'package/main.ts'),
+      entry: resolve(__dirname, 'package/index.ts'),
       formats: [ 'es' ],
       fileName: (format) => `index.${format}.js`,
     },

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "main": "dist/index.es.js",
+  "typings": "dist/index.d.ts",
   "author": "dreamoment-npm",
   "license": "MIT",
   "publishConfig": {
@@ -25,6 +26,7 @@
     "vue-tsc": "^1.8.25"
   },
   "dependencies": {
+    "@dreamoment/para-world": "^0.0.1",
     "three": "^0.159.0"
   }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import ParaWorld from '../package/main'
+import ParaWorld from '@dreamoment/para-world'
 
 
 const scene = new THREE.Scene()
