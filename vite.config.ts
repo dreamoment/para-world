@@ -4,19 +4,43 @@ import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 
 
-export default defineConfig({
-  plugins: [
-    vue(),
-    dts()
-  ],
-  build: {
+export default defineConfig(({command,mode}) => {
+
+  const config = {
+
+    development: {
+      plugins: [
+        vue()
+      ]
+    },
+
+    example: {
+      plugins: [
+        vue()
+      ],
+      base: '/alchemy/example/'
+    },
+
     lib: {
-      entry: resolve(__dirname, 'package/index.ts'),
-      formats: [ 'es' ],
-      fileName: (format) => `index.${format}.js`,
-    },
-    rollupOptions: {
-      external: [ 'three' ],
-    },
-  },
+      plugins: [
+        vue(),
+        dts()
+      ],
+      build: {
+        example: {},
+        lib: {
+          lib: {
+            entry: resolve(__dirname, 'package/index.ts'),
+            formats: [ 'es' ],
+            fileName: (format) => `index.${format}.js`,
+          },
+          rollupOptions: {
+            external: [ 'three' ],
+          },
+        }
+      }
+    }
+  }
+
+  return config[mode]
 })

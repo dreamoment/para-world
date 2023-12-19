@@ -40,11 +40,19 @@ ParaWorld.createCover(_wall1)
 ParaWorld.createCover(_wall2)
 
 const animate = () => {
-  controls.update();
+  controls.update()
   renderer.render(scene, camera)
 }
 
+const onWindowResize = () => {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+}
+
 renderer.setAnimationLoop(animate)
+
+window.addEventListener('resize', onWindowResize)
 </script>
 
 <template>
