@@ -18,7 +18,7 @@ export default defineConfig(({command,mode}) => {
       plugins: [
         vue()
       ],
-      base: '/alchemy/example/'
+      base: '/para-world/example/'
     },
 
     lib: {
@@ -27,20 +27,17 @@ export default defineConfig(({command,mode}) => {
         dts()
       ],
       build: {
-        example: {},
         lib: {
-          lib: {
-            entry: resolve(__dirname, 'package/index.ts'),
-            formats: [ 'es' ],
-            fileName: (format) => `index.${format}.js`,
-          },
-          rollupOptions: {
-            external: [ 'three' ],
-          },
-        }
+          entry: resolve(__dirname, 'package/index.ts'),
+          formats: [ 'es' ],
+          fileName: (format) => `index.${format}.js`,
+        },
+        rollupOptions: {
+          external: [ 'three' ],
+        },
       }
     }
   }
-
+  console.log(mode, config[mode])
   return config[mode]
 })
