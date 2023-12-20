@@ -38,6 +38,6 @@ export default defineConfig(({command,mode}) => {
       }
     }
   }
-  console.log(mode, config[mode])
+
   return config[mode]
 })
