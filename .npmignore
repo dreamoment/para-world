@@ -6,7 +6,7 @@ src
 .gitignore
 .npmignore
 index.html
-favicon.ico
 tsconfig.json
 tsconfig.node.json
 vite.config.ts
+*.ico
