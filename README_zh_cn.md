@@ -27,7 +27,8 @@ npm i @dreamoment/para-world
 ```
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import ParaWorld from '@dreamoment/para-world'
+import ParaWorld from '../package/index'
+
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000 )
@@ -43,6 +44,7 @@ document.body.appendChild(renderer.domElement)
 const controls = new OrbitControls(camera, renderer.domElement)
 
 camera.position.y += 10
+
 
 // edit scene
 const createWall = () => {
@@ -64,11 +66,19 @@ ParaWorld.createCover(_wall1)
 ParaWorld.createCover(_wall2)
 
 const animate = () => {
-  controls.update();
+  controls.update()
   renderer.render(scene, camera)
 }
 
+const onWindowResize = () => {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+}
+
 renderer.setAnimationLoop(animate)
+
+window.addEventListener('resize', onWindowResize)
 ```
 
 ## API
