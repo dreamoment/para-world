@@ -27,7 +27,7 @@ npm i @dreamoment/para-world
 ```
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import ParaWorld from '../package/index'
+import ParaWorld from '@dreamoment/para-world'
 
 
 const scene = new THREE.Scene()
